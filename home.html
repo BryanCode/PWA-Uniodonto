@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uniodonto Porto Alegre</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Georama:ital,wght@0,100..900;1,100..900&display=swap');
+        :root {
+            /* Paleta Principal */
+            --roxo-uniodonto: #b9c9ff;
+            --pessego-uniodonto: #ff9fad;
+            --ciano-uniodonto: #60ebff;
+            --lima-uniodonto: #e1ff7b;
+            --goiaba-uniodonto: #ff637e;
+
+            /* Paleta de Apoio */
+            --vinho-medio-uniodonto: #a60069;
+            --vinho-ultra-uniodonto: #550039;
+            --vinho-claro-uniodonto: #bc5688;
+        }
+        body {
+            font-weight: 500;
+            font-family: 'Georama', sans-serif;
+            background-color: #F2F7FA;
+            color: var(--vinho-medio-uniodonto);
+            overflow: hidden;
+        }
+        .header {
+            background-color: var(--vinho-medio-uniodonto);
+            color: white;
+            padding: 20px;
+            padding-top: 15px !important;
+            padding-bottom: 15px !important;
+            text-align: left;
+            font-size: 18px;
+        }
+        .profile-section {
+            padding-left: 1.2em;
+            text-align: left;
+            color: white;
+            margin-top: -30px;
+        }
+        .content {
+            padding-top: 40px;
+            overflow-y: scroll;
+        }
+        .self-service {
+            margin-bottom: 3em !important;
+        }
+        .services, .self-service {
+            padding-bottom: 0 !important;
+            background-color: #F2F7FA;
+            padding: 20px;
+        }
+        .service-item, .self-service-item {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.18);
+            background-color: white;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .service-item i, .self-service-item i {
+            font-size: 24px;
+            margin-right: 10px;
+            color: var(--vinho-medio-uniodonto);
+        }
+        .footer-nav {
+            background-color: #f8e1f8;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            border-top: 1px solid #ddd;
+        }
+        .footer-nav a {
+            color: var(--vinho-medio-uniodonto);
+            text-align: center;
+            font-size: 14px;
+        }
+        .footer-nav a.active {
+            color: var(--goiaba-uniodonto) !important;
+        }
+        .name {
+            color: var(--vinho-medio-uniodonto);
+        }
+        .plan {
+            color: var(--vinho-medio-uniodonto);
+        }
+        .services i, .self-service i {
+            width: 1.5em;
+        }
+        .footer-nav i {
+            font-size: 16px;
+        }
+        .footer-nav a {
+            text-decoration: none;
+        }
+        a {
+            text-decoration: none;
+            color: var(--vinho-medio-uniodonto);
+        }
+        
+        /* Estilo do menu lateral */
+        .side-menu {
+            position: fixed;
+            top: 0;
+            right: -250px;
+            width: 250px;
+            height: 100%;
+            background-color: white;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            z-index: 100;
+            transition: right 0.3s ease;
+        }
+        .side-menu.active {
+            right: 0;
+        }
+        .side-menu h5 {
+            color: var(--vinho-medio-uniodonto);
+        }
+        .side-menu a {
+            display: block;
+            padding: 10px 0;
+            color: var(--vinho-medio-uniodonto);
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .side-menu a:hover {
+            color: var(--goiaba-uniodonto);
+        }
+        .side-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+            z-index: 99;
+        }
+        .side-menu {
+            position: fixed;
+            top: 0;
+            right: -250px;
+            width: 250px;
+            height: 100%;
+            background-color: white;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            z-index: 100;
+            transition: right 0.3s ease;
+        }
+        .side-menu.active {
+            right: 0;
+        }
+        .side-menu-overlay.active {
+            display: block;
+        }
+        .side-menu h5 {
+            color: var(--vinho-medio-uniodonto);
+            margin-bottom: 20px;
+        }
+        .side-menu a {
+            display: block;
+            padding: 10px 0;
+            color: var(--vinho-medio-uniodonto);
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .side-menu a:hover {
+            color: var(--goiaba-uniodonto);
+        }
+        .side-menu .btn-close-menu {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 20px;
+            color: var(--vinho-medio-uniodonto);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div>Uniodonto Porto Alegre</div>
+    </div>
+
+    <div class="content" style="height: calc(100vh - 80px) !important; overflow-y: auto !important; padding-bottom: 10px !important;">
+        <div class="profile-section">
+            <div class="name fw-bold mt-2"></div>
+            <div class="plan"></div>
+        </div>
+    
+        <div class="services">
+            <h5 class="fw-bold">Serviços ao Cliente</h5>
+            <a href="/cards.html">
+                <div class="service-item">
+                    <i class="fas fa-wallet"></i>
+                    <span>Cartão Virtual</span>
+                </div>
+            </a>    
+            <a href="/providers.html">
+                <div class="service-item">
+                    <i class="fas fa-user-md"></i>
+                    <span>Rede de Dentistas</span>
+                </div>
+            </a>
+            <div class="service-item">
+                <i class="fas fa-file-alt"></i>
+                <span>Extrato de Utilização</span>
+            </div>
+            
+            <div class="service-item">
+                <i class="fas fa-money-bill-wave"></i>
+                <span>Financeiro</span>
+            </div>
+            <div class="service-item">
+                <i class="fa-solid fa-hand-holding-dollar"></i>
+                <span>Reembolso</span>
+            </div>
+            <div class="service-item">
+                <i class="fa-solid fa-user-pen"></i>
+                <span>Atualizar Cadastro</span>
+            </div>
+        </div>
+    
+        <div class="self-service">
+            <h5 class="fw-bold">Atendimento Próprio</h5>
+            <div class="self-service-item">
+                <i class="fas fa-tooth"></i>
+                <span>Renova Implantes</span>
+            </div>
+            <div class="self-service-item">
+                <i class="fas fa-ambulance"></i>
+                <span>Urgência 24H</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer-nav">
+        <a style="color: var(--goiaba-uniodonto);" href="#"><i class="fas fa-home"></i><br>Início</a>
+        <a href="/cards.html"><i class="fas fa-wallet"></i><br>Carteira</a>
+        <a href="/providers.html"><i class="fas fa-user-md"></i><br>Dentistas</a>
+        <a href="#" onclick="toggleMenu()"><i id="menu-icon" class="fas fa-bars"></i><br>Menu</a>
+    </div>
+
+     <!-- Menu Lateral -->
+     <div class="side-menu-overlay" id="side-menu-overlay" onclick="closeMenu()"></div>
+     <div class="side-menu" id="side-menu">
+         <button class="btn-close-menu" onclick="closeMenu()">&times;</button>
+         <h5>Menu</h5>
+         <a href="#">Configurações</a>
+         <a href="#">Atualizar Cadastro</a>
+         <a href="#">Ajuda</a>
+         <a href="#">Sair</a>
+     </div>
+ 
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const userName = document.querySelector('.name');
+        const userPlan = document.querySelector('.plan');
+
+        getCards();
+        function getCards() {
+            cards = JSON.parse(localStorage.getItem('cards'));
+            userCPF = localStorage.getItem('cpf');
+            user = searchByCPF(cards, userCPF);
+                console.log(user);
+            fillData(user);
+        }
+
+       function fillData(user) {
+            userName.textContent = user[0].NOME;
+            userPlan.textContent = user[0].MOD;
+        }
+
+
+        function searchByCPF(dados, cpf) {
+            return dados.filter(usuario => usuario.CPF === cpf);
+        }
+
+        function toggleMenu() {
+
+            const menu = document.getElementById('side-menu');
+            const overlay = document.getElementById('side-menu-overlay');
+            const menuIcon = document.getElementById('menu-icon');
+
+            menu.classList.toggle('active');
+            overlay.classList.toggle('active');
+
+            // Muda a cor do ícone do menu na navbar quando o menu está ativo
+            if (menu.classList.contains('active')) {
+                menuIcon.style.color = 'var(--goiaba-uniodonto)';
+            } else {
+                menuIcon.style.color = 'var(--vinho-medio-uniodonto)';
+            }
+        }
+
+        function closeMenu() {
+            document.getElementById('side-menu').classList.remove('active');
+            document.getElementById('side-menu-overlay').classList.remove('active');
+            document.getElementById('menu-icon').style.color = 'var(--vinho-medio-uniodonto)';
+        }
+    </script>
+</body>
+</html>
