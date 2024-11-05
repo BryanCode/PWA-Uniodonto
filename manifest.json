@@ -1,13 +1,13 @@
 {
-    "background_color": "#585454",
+    "background_color": "#a60069",
     "dir": "ltr",
     "display": "fullscreen",
-    "name": "UniodontoPOA",
+    "name": "Uniodonto POA",
     "orientation": "portrait",
     "scope": "/https://https://bryancode.github.io/PWA-Uniodonto/",
     "short_name": "Uniodonto POA",
     "start_url": "https://bryancode.github.io/PWA-Uniodonto/",
-    "theme_color": "#9e234a",
+    "theme_color": "#e1ff7b",
     "icons": [
         {
           "src": "windows11/SmallTile.scale-100.png",
