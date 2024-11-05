@@ -5,7 +5,7 @@
     "name": "UniodontoPOA",
     "orientation": "portrait",
     "scope": "/https://https://bryancode.github.io/PWA-Uniodonto/",
-    "short_name": "Uni-Escala",
+    "short_name": "Uniodonto POA",
     "start_url": "https://bryancode.github.io/PWA-Uniodonto/",
     "theme_color": "#9e234a",
     "icons": [
@@ -462,8 +462,10 @@
     "description": "...",
     "lang": "pt",
     "display_override": [
-      "window-controls-overlay",
-      "minimal-ui",
-      "standalone"
+      "standalone",
+         "minimal-ui",
+      "window-controls-overlay"
+     
+     
     ]
   }
